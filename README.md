@@ -16,6 +16,6 @@ snakemake -s Bio-Python-Pipeline-Project/done.smk --cores 4 --latency-wait 120 -
 MISC:
 
 If for any reason you need to stop the workflow while its running hit CTRL + C
-Then run this in terminal: snakemake -s done.smk --cores 4 clean
+Then run this in terminal: snakemake -s Bio-Python-Pipeline-Project/done.smk --cores 4 clean
 
 
