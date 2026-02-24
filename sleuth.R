@@ -34,5 +34,6 @@ sleuth_significant = dplyr::filter(sleuth_table, qval <=0.05) |> dplyr::arrange(
 head(sleuth_significant, n=10)
 
 #write FDR < 0.05 transcripts to file
-write.table(sleuth_significant[, 1:4], file='fdr05_results.txt', quote=FALSE, row.names=FALSE)
+write.table(sleuth_significant[, c('target_id', 'test_stat', 'pval', 'qval')], file='fdr05_results.txt', quote=FALSE, row.names=FALSE)
 #[,1 4] will only write the first four columns to file, which are the ones i want
+#had to change it to a specific order, so i just used c(column names i want in order)
