@@ -354,8 +354,9 @@ rule writingblasttofile:
             grabtop = frameit.sort_values('bitscore', ascending = False) #sort the csv file by bitscore to get the top 5 hits and make ascending = False so tyhey are sorted largest to smallest
 
             top5 = grabtop.groupby('qseqid').head(5) #this is where it grabs the top 5 
-            top5.to_csv(outputfiles[i], sep='\t') #make a new tsv file by noting sep='\t' and indexing proper output file
-
+            top5 = top5.drop(columns=['qseqid']) #now that ive sorted the top 5 by qseqid i dont need it anymore and assignment doesnt want me including it in output
+            top5.to_csv(outputfiles[i], sep='\t', index = False) #make a new tsv file by noting sep='\t' and indexing proper output file
+#index = False makes it so that column numbers dont show
 #combinging all files into one txt output that i can echo to my pipeline report later
 rule catit:
     input:
