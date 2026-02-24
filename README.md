@@ -28,7 +28,7 @@ RUNNING WORKFLOW:
   cd Bio-Python-Pipeline-Project/
 4. Now run the snakemake workflow. In terminal run this command:
   snakemake -s done.smk --cores 4 --latency-wait 120 -p
-5. Output file to view results is WegmanGabriel_PipelineReport.txt
+5. Output file to view results is PipelineReport.txt, the output with non-subsampled results is in this repo as: WegmanGabriel_PipelineReport.txt
 
 MISC:
 
